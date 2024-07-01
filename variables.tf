@@ -28,9 +28,9 @@ variable "instance_volume_size" {
   default     = 100
 }
 variable "storage_mode" {
-  description = "Storage Mode"
+  description = "Storage Mode LOCAL or TIERED, TIERED is not supported for t3.small instance type."
   type        = string
-  default     = "LOCAL" # LOCAL,TIERED
+  default     = "LOCAL"
 }
 variable "kafka_version" {
   description = "Version of the clsuter"
@@ -43,8 +43,8 @@ variable "number_of_broker_nodes" {
   default     = 3
 }
 variable "public_access" {
-  description = "Numbers of broker nodes, always deveid with your zone, eg. 3 zone = 3, 6, 9 and so of broker nodes."
+  description = "Public access can first be done after you cluster is creted and use public-subnets, after that you can replace the variable with SERVICE_PROVIDED_EIPS"
   type        = string
-  default     = "DISABLED" # first use SERVICE_PROVIDED_EIPS after the cluster is created.
+  default     = "DISABLED"
 }
 

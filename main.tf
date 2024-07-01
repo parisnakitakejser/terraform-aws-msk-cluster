@@ -52,3 +52,23 @@ resource "aws_msk_cluster" "cluster" {
     }
   }
 }
+
+
+output "arn" {
+  value = aws_msk_cluster.cluster.arn
+}
+output "kms_key_arn" {
+  value = aws_msk_cluster.cluster.encryption_info.0.encryption_at_rest_kms_key_arn
+}
+
+output "bootstrap_brokers_sasl_iam_connect_string" {
+  value = aws_msk_cluster.cluster.bootstrap_brokers_sasl_iam
+}
+
+output "bootstrap_brokers_public_sasl_iam_connect_string" {
+  value = aws_msk_cluster.cluster.bootstrap_brokers_public_sasl_iam
+}
+
+output "bootstrap_brokers_vpc_connectivity_sasl_iam_connect_string" {
+  value = aws_msk_cluster.cluster.bootstrap_brokers_vpc_connectivity_sasl_iam
+}
