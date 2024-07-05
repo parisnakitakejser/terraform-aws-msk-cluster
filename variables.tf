@@ -20,7 +20,7 @@ variable "vpc_subnet_ids" {
 variable "instance_type" {
   description = "Instance type"
   type        = string
-  default     = "kafka.t3.small"
+  default     = "kafka.m7g.large"
 }
 variable "instance_volume_size" {
   description = "Instance volume size"
@@ -30,12 +30,12 @@ variable "instance_volume_size" {
 variable "storage_mode" {
   description = "Storage Mode LOCAL or TIERED, TIERED is not supported for t3.small instance type."
   type        = string
-  default     = "LOCAL"
+  default     = "TIERED"
 }
 variable "kafka_version" {
   description = "Version of the clsuter"
   type        = string
-  default     = "3.6.0"
+  default     = "3.7.x.kraft"
 }
 variable "number_of_broker_nodes" {
   description = "Numbers of broker nodes, always deveid with your zone, eg. 3 zone = 3, 6, 9 and so of broker nodes."
